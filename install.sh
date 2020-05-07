@@ -102,13 +102,13 @@ install_soga() {
     fi
     echo -e ""
     echo -e "soga 后端管理命令："
-    echo -e "systemctl start soga               启动 soga"
-    echo -e "systemctl restart soga             重启 soga"
-    echo -e "systemctl stop soga                停止 soga"
-    echo -e "systemctl enbale soga              设置开机自启"
-    echo -e "systemctl disable soga             取消开机自启"
-    echo -e "systemctl status soga              查看 soga 运行状态"
-    echo -e "systemctl status soga --no-pager   查看 soga 日志"
+    echo -e "systemctl start soga                  启动 soga"
+    echo -e "systemctl restart soga                重启 soga"
+    echo -e "systemctl stop soga                   停止 soga"
+    echo -e "systemctl enbale soga                 设置开机自启"
+    echo -e "systemctl disable soga                取消开机自启"
+    echo -e "systemctl status soga                 查看 soga 运行状态"
+    echo -e "systemctl status soga --no-pager -l   查看 soga 日志"
 }
 
 echo -e "${green}开始安装${plain}"
