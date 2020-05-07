@@ -74,7 +74,7 @@ install_soga() {
     fi
     last_version=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     echo -e "检测到 soga 最新版本：${last_version}，开始安装"
-    wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga.tar.gz
+    wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件，如果多次安装失败，请参考手动安装教程${plain}"
         exit 1
@@ -97,7 +97,6 @@ install_soga() {
         echo -e "全新安装，请首先编辑 ${green}/etc/soga/soga.conf${plain} 配置文件，配置必要的参数，然后启动 soga 后端"
     else
         systemctl start soga
-        systemctl status soga
         echo -e ""
         echo -e "更新完毕，已重启 soga"
     fi
