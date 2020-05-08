@@ -100,15 +100,23 @@ install_soga() {
         echo -e ""
         echo -e "更新完毕，已重启 soga"
     fi
+    curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
+    chmod +x /usr/bin/soga
     echo -e ""
-    echo -e "soga 后端管理命令："
-    echo -e "systemctl start soga                  启动 soga"
-    echo -e "systemctl restart soga                重启 soga"
-    echo -e "systemctl stop soga                   停止 soga"
-    echo -e "systemctl enbale soga                 设置开机自启"
-    echo -e "systemctl disable soga                取消开机自启"
-    echo -e "systemctl status soga                 查看 soga 运行状态"
-    echo -e "systemctl status soga --no-pager -l   查看 soga 日志"
+    echo "soga 管理脚本使用方法: "
+    echo "------------------------------------------"
+    echo "soga              - 显示管理菜单 (功能更多)"
+    echo "soga start        - 启动 soga"
+    echo "soga stop         - 停止 soga"
+    echo "soga restart      - 重启 soga"
+    echo "soga status       - 查看 soga 状态"
+    echo "soga enable       - 设置 soga 开机自启"
+    echo "soga disable      - 取消 soga 开机自启"
+#    echo "soga log          - 查看 soga 日志"
+    echo "soga update       - 更新 soga"
+    echo "soga install      - 安装 soga"
+    echo "soga uninstall    - 卸载 soga"
+    echo "------------------------------------------"
 }
 
 echo -e "${green}开始安装${plain}"
