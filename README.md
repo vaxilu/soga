@@ -1,3 +1,5 @@
+# 前往 WIKI：https://github.com/sprov065/soga/wiki
+
 # soga 后端
 关键部分使用极其高效且轻量的CCCCCCC语言编写，优化 v2ray 内存占用，在同等用户数量和相同的 alterId 下（众所周知，alterId的大小很影响内存），相比原版 v2ray 预计可降低40-60%的内存占用！！！
 
