@@ -40,5 +40,3 @@ soga不仅是v2ray后端，未来还可能是tttttttrojan后端，敬请期待�
  - docker 运行（待更新完善）
  
 前往 WIKI：https://github.com/sprov065/soga/wiki
-
-详情联系：https://t.me/sprov
