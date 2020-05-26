@@ -94,11 +94,11 @@ install_soga() {
     if [[ ! -f /etc/soga/soga.conf ]]; then
         cp soga.conf /etc/soga/
         echo -e ""
-        echo -e "全新安装，请首先编辑 ${green}/etc/soga/soga.conf${plain} 配置文件，配置必要的参数，然后启动 soga 后端"
+        echo -e "全新安装，请先参看 wiki 教程：https://github.com/sprov065/soga/wiki，配置必要的内容"
     else
         systemctl start soga
         echo -e ""
-        echo -e "更新完毕，已重启 soga"
+        echo -e "更新完毕，已重启 soga，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki"
     fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
     chmod +x /usr/bin/soga
