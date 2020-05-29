@@ -401,7 +401,7 @@ show_menu() {
  ${green}13.${plain} 查看 soga 版本
  "
     show_status
-    echo && read -p "请输入选择 [0-13]: " num
+    echo && read -p "请输入选择 [0-12]: " num
 
     case "${num}" in
         0) exit 0
@@ -428,11 +428,9 @@ show_menu() {
         ;;
         11) install_bbr
         ;;
-        12) update_v2ray
+        12) check_install && show_soga_version
         ;;
-        13) check_install && show_soga_version
-        ;;
-        *) echo -e "${red}请输入正确的数字 [0-13]${plain}"
+        *) echo -e "${red}请输入正确的数字 [0-12]${plain}"
         ;;
     esac
 }
