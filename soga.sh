@@ -397,8 +397,7 @@ show_menu() {
  ${green}10.${plain} 取消 soga 开机自启
 ————————————————
  ${green}11.${plain} 一键安装 bbr (最新内核)
- ${green}12.${plain} 更新 v2ray
- ${green}13.${plain} 查看 soga 版本
+ ${green}12.${plain} 查看 soga 版本
  "
     show_status
     echo && read -p "请输入选择 [0-12]: " num
