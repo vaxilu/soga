@@ -152,7 +152,7 @@ start() {
         if [[ $? == 0 ]]; then
             echo -e "${green}soga 启动成功${plain}"
         else
-            echo -e "${red}soga启动失败，可能是因为启动时间超过了两秒，请稍后查看日志信息${plain}"
+            echo -e "${red}soga可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
         fi
     fi
 
@@ -189,7 +189,7 @@ restart() {
     if [[ $? == 0 ]]; then
         echo -e "${green}soga 重启成功${plain}"
     else
-        echo -e "${red}soga重启失败，可能是因为启动时间超过了两秒，请稍后查看日志信息${plain}"
+        echo -e "${red}soga可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
     fi
     if [[ $# == 0 ]]; then
         before_show_menu
