@@ -230,7 +230,7 @@ disable() {
 }
 
 show_log() {
-    echo "没有此功能"
+    journalctl -u soga.service -e --no-pager
     if [[ $# == 0 ]]; then
         before_show_menu
     fi
@@ -370,7 +370,7 @@ show_usage() {
     echo "soga status       - 查看 soga 状态"
     echo "soga enable       - 设置 soga 开机自启"
     echo "soga disable      - 取消 soga 开机自启"
-#    echo "soga log          - 查看 soga 日志"
+    echo "soga log          - 查看 soga 日志"
     echo "soga update       - 更新 soga"
     echo "soga install      - 安装 soga"
     echo "soga uninstall    - 卸载 soga"
@@ -379,8 +379,8 @@ show_usage() {
 
 show_menu() {
     echo -e "
-  ${green}soga 后端管理脚本${plain} ${red}${version}${plain}
---- https://blog.sprov.xyz/soga ---
+  ${green}soga 后端管理脚本${plain}
+--- https://github.com/sprov065/soga ---
   ${green}0.${plain} 退出脚本
 ————————————————
   ${green}1.${plain} 安装 soga
@@ -391,16 +391,17 @@ show_menu() {
   ${green}5.${plain} 停止 soga
   ${green}6.${plain} 重启 soga
   ${green}7.${plain} 查看 soga 状态
+  ${green}8.${plain} 查看 soga 日志
 ————————————————
-  ${green}8.${plain} 设置 soga 开机自启
-  ${green}9.${plain} 取消 soga 开机自启
+  ${green}9.${plain} 设置 soga 开机自启
+ ${green}10.${plain} 取消 soga 开机自启
 ————————————————
- ${green}10.${plain} 一键安装 bbr (最新内核)
- ${green}11.${plain} 更新 v2ray
- ${green}12.${plain} 查看 soga 版本
+ ${green}11.${plain} 一键安装 bbr (最新内核)
+ ${green}12.${plain} 更新 v2ray
+ ${green}13.${plain} 查看 soga 版本
  "
     show_status
-    echo && read -p "请输入选择 [0-12]: " num
+    echo && read -p "请输入选择 [0-13]: " num
 
     case "${num}" in
         0) exit 0
@@ -419,17 +420,19 @@ show_menu() {
         ;;
         7) check_install && status
         ;;
-        8) check_install && enable
+        8) check_install && show_log
         ;;
-        9) check_install && disable
+        9) check_install && enable
         ;;
-        10) install_bbr
+        10) check_install && disable
         ;;
-        11) update_v2ray
+        11) install_bbr
         ;;
-        12) check_install && show_soga_version
+        12) update_v2ray
         ;;
-        *) echo -e "${red}请输入正确的数字 [0-12]${plain}"
+        13) check_install && show_soga_version
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-13]${plain}"
         ;;
     esac
 }
