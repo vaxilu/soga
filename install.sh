@@ -112,7 +112,7 @@ install_soga() {
     echo "soga status       - 查看 soga 状态"
     echo "soga enable       - 设置 soga 开机自启"
     echo "soga disable      - 取消 soga 开机自启"
-#    echo "soga log          - 查看 soga 日志"
+    echo "soga log          - 查看 soga 日志"
     echo "soga update       - 更新 soga"
     echo "soga install      - 安装 soga"
     echo "soga uninstall    - 卸载 soga"
