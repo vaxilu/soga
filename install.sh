@@ -66,6 +66,19 @@ install_base() {
     fi
 }
 
+# 0: running, 1: not running, 2: not installed
+check_status() {
+    if [[ ! -f /etc/systemd/system/soga.service ]]; then
+        return 2
+    fi
+    temp=$(systemctl status soga | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+    if [[ x"${temp}" == x"running" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 install_soga() {
     systemctl stop soga
     cd /usr/local/
@@ -97,8 +110,14 @@ install_soga() {
         echo -e "全新安装，请先参看 wiki 教程：https://github.com/sprov065/soga/wiki，配置必要的内容"
     else
         systemctl start soga
+        sleep 2
+        check_status
         echo -e ""
-        echo -e "更新完毕，已重启 soga，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki"
+        if [[ $? == 0 ]]; then
+            echo -e "${green}soga 重启成功${plain}"
+        else
+            echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki${plain}"
+        fi
     fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
     chmod +x /usr/bin/soga
