@@ -1,11 +1,13 @@
 详细教程：[进入](https://github.com/sprov065/soga/wiki)
 
 # soga 后端
+soga 后端是一个支持 v2ray 和 trojan 的后端
+
 ## v2ray
-关键部分使用极其高效且轻量的CCCCCCC语言编写，优化 v2ray 内存占用，在同等用户数量和相同的 alterId 下（众所周知，alterId的大小很影响内存），相比原版 v2ray 预计可降低40-60%的内存占用！！！
+针对 v2ray 占内存的特点使用 C 语言特别优化了 v2ray 的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 40-60% 的内存空间，用户数量越多，节省的内存就越多。
 
 ## trojan
-soga 同时还支持高效轻量级的 trojan 后端，任君选择
+trojan 相对于 v2ray 来说更轻量和高效，在大量用户下也几乎不占多少内存，推荐优先选择 trojan。
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |
