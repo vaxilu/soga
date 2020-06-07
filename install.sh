@@ -79,6 +79,10 @@ check_status() {
     fi
 }
 
+install_acme() {
+    curl https://get.acme.sh | sh
+}
+
 install_soga() {
     systemctl stop soga
     cd /usr/local/
@@ -140,4 +144,5 @@ install_soga() {
 
 echo -e "${green}开始安装${plain}"
 install_base
+install_acme
 install_soga
