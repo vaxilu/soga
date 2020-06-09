@@ -60,9 +60,9 @@ fi
 
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
-        yum install wget curl tar -y
+        yum install wget curl tar crontabs socat -y
     else
-        apt install wget curl tar -y
+        apt install wget curl tar cron socat -y
     fi
 }
 
