@@ -74,15 +74,19 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
         <th rowspan="2">sspanel-uim</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="3" colspan="2" align="center">开发中</td>
+        <td rowspan="4" colspan="2" align="center">开发中</td>
     </tr>
     <tr>
         <td>trojan</td>
         <td>√</td>
     </tr>
     <tr>
-        <th>v2board</th>
+        <th rowspan="2">v2board</th>
         <td>v2ray</td>
+        <td>√</td>
+    </tr>
+    <tr>
+        <td>trojan</td>
         <td>√</td>
     </tr>
     <tr>
