@@ -105,7 +105,7 @@ update() {
     fi
     bash <(curl -Ls https://blog.sprov.xyz/soga.sh)
     if [[ $? == 0 ]]; then
-        echo -e "${green}更新完成，已自动重启 soga${plain}"
+        echo -e "${green}更新完成，已自动重启 soga，请使用 soga status 查看启动情况${plain}"
         exit
 #        if [[ $# == 0 ]]; then
 #            restart
@@ -150,7 +150,7 @@ start() {
         sleep 2
         check_status
         if [[ $? == 0 ]]; then
-            echo -e "${green}soga 启动成功${plain}"
+            echo -e "${green}soga 启动成功，请使用 soga status 查看启动情况${plain}"
         else
             echo -e "${red}soga可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
         fi
@@ -187,7 +187,7 @@ restart() {
     sleep 2
     check_status
     if [[ $? == 0 ]]; then
-        echo -e "${green}soga 重启成功${plain}"
+        echo -e "${green}soga 重启成功，请使用 soga status 查看启动情况${plain}"
     else
         echo -e "${red}soga可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
     fi
@@ -374,12 +374,13 @@ show_usage() {
     echo "soga update       - 更新 soga"
     echo "soga install      - 安装 soga"
     echo "soga uninstall    - 卸载 soga"
+    echo "soga version      - 查看 soga 版本"
     echo "------------------------------------------"
 }
 
 show_menu() {
     echo -e "
-  ${green}soga 后端管理脚本${plain}
+  ${green}soga 后端管理脚本，${plain}${red}不适用于docker${plain}
 --- https://github.com/sprov065/soga ---
   ${green}0.${plain} 退出脚本
 ————————————————
