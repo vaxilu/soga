@@ -57,9 +57,9 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 |对接方式           |v2ray             |trojan           |
 |------------------|------------------|------------------|
 |webapi     	   |√                 |√                 |
-|数据库   	        |开发中             |开发中            |
+|数据库   	        |√                 |√                 |
 |docker webapi     |√                 |√                 |
-|docker 数据库     |开发中             |开发中            |
+|docker 数据库     |√                 |√                 |
 
 ## 前端对接方式对照表
 <table>
@@ -74,11 +74,12 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
         <th rowspan="2">sspanel-uim</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="4" align="center">开发中</td>
+        <td>√</td>
         <td>√</td>
     </tr>
     <tr>
         <td>trojan</td>
+        <td>√</td>
         <td>√</td>
         <td>√</td>
     </tr>
@@ -86,6 +87,7 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
         <th rowspan="2">v2board</th>
         <td>v2ray</td>
         <td>√</td>
+        <td rowspan="2" align="center">开发中</td>
         <td>√</td>
     </tr>
     <tr>
