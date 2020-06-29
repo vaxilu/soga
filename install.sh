@@ -100,8 +100,6 @@ install_soga() {
     rm soga.tar.gz -f
     cd soga
     chmod +x soga
-    chmod +x bin/v2ray
-    chmod +x bin/v2ctl
     mkdir /etc/soga/ -p
     rm /etc/systemd/system/soga.service -f
     cp -f soga.service /etc/systemd/system/
