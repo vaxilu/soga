@@ -87,11 +87,12 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
         <th rowspan="2">v2board</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="2" align="center">开发中</td>
+        <td>√</td>
         <td>√</td>
     </tr>
     <tr>
         <td>trojan</td>
+        <td>√</td>
         <td>√</td>
         <td>√</td>
     </tr>
