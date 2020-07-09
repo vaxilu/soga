@@ -15,8 +15,9 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 |前端              |v2ray              |trojan           |
 |------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |
-|v2board	   |√                 |√                 |
+|v2board	       |√                 |√                 |
 |WHCMS             |开发中             |计划中            |
+|vnetpanel         |开发中             |开发中            |
 |v2-ui             |计划中             |计划中            |
 
 
@@ -98,6 +99,14 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
     </tr>
     <tr>
         <th rowspan="2">WHCMS</th>
+        <td>v2ray</td>
+        <td rowspan="2" colspan="3" align="center">开发中</td>
+    </tr>
+    <tr>
+        <td>trojan</td>
+    </tr>
+    <tr>
+        <th rowspan="2">vnetpanel</th>
         <td>v2ray</td>
         <td rowspan="2" colspan="3" align="center">开发中</td>
     </tr>
