@@ -3,7 +3,7 @@
 商业版价格：[进入](https://github.com/sprov065/soga/wiki/05-%E8%8E%B7%E5%8F%96%E5%95%86%E4%B8%9A%E7%89%88%E6%8E%88%E6%9D%83%E7%A0%81)
 
 # soga 后端
-soga 后端是一个支持 v2ray 和 trojan 的后端
+soga 后端是一个支持 v2ray 和 trojan 的后端，社区版版最高支持88用户
 
 ## v2ray
 soga 后端针对 v2ray 占内存的特点使用 C 语言特别优化了 v2ray 的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 40-60% 的内存空间，用户数量越多，节省的内存就越多，用户较少则节省不明显。
