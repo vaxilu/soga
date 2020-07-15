@@ -15,9 +15,9 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 |前端              |v2ray              |trojan           |
 |------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |
-|v2board	       |√                 |√                 |
+|v2board	   |√                 |√                 |
 |WHCMS             |开发中             |计划中            |
-|vnetpanel         |开发中             |开发中            |
+|vnetpanel         |√                 |√                 |
 |v2-ui             |计划中             |计划中            |
 
 
@@ -108,10 +108,14 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
     <tr>
         <th rowspan="2">vnetpanel</th>
         <td>v2ray</td>
-        <td rowspan="2" colspan="3" align="center">开发中</td>
+        <td>√</td>
+        <td rowspan="2" align="center">开发中</td>
+        <td>√</td>
     </tr>
     <tr>
         <td>trojan</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
     <tr>
         <th rowspan="2">v2-ui</th>
@@ -127,3 +131,5 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 </table>
 
 加入我们：[Telegram群组](https://t.me/soga_v2ray)
+
+加入我们：[Telegram通知频道](https://t.me/sogav2ray)
