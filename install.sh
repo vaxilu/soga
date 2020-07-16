@@ -60,6 +60,7 @@ fi
 
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
+        yum install epel-release -y
         yum install wget curl tar crontabs socat -y
     else
         apt install wget curl tar cron socat -y
@@ -84,7 +85,6 @@ install_acme() {
 }
 
 install_soga() {
-    systemctl stop soga
     cd /usr/local/
     if [[ -e /usr/local/soga/ ]]; then
         rm /usr/local/soga/ -rf
@@ -103,6 +103,7 @@ install_soga() {
     mkdir /etc/soga/ -p
     rm /etc/systemd/system/soga.service -f
     cp -f soga.service /etc/systemd/system/
+    systemctl stop soga
     systemctl daemon-reload
     systemctl enable soga
     echo -e "${green}soga v${last_version}${plain} 安装完成，已设置开机自启"
