@@ -103,8 +103,8 @@ install_soga() {
     mkdir /etc/soga/ -p
     rm /etc/systemd/system/soga.service -f
     cp -f soga.service /etc/systemd/system/
-    systemctl stop soga
     systemctl daemon-reload
+    systemctl stop soga
     systemctl enable soga
     echo -e "${green}soga v${last_version}${plain} 安装完成，已设置开机自启"
     if [[ ! -f /etc/soga/soga.conf ]]; then
