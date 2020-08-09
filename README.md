@@ -10,7 +10,7 @@ soga 后端针对 VMess 占内存的特点使用 C 语言特别优化了 VMess �
 
 soga 后端也支持 VLESS 协议，VLESS 是 v2ray 新推出的协议，比 VMess 协议要轻量得多，完全解决了内存占用大的问题，无需同步时间，与 Trojan 一样轻量、快速，待客户端普及后，推荐从 VMess 转换到此协议上来。
 
-** VLESS 协议还在完善中，目前仅供测试用途**
+**VLESS 协议还在完善中，目前仅供测试用途**
 
 ## Trojan
 soga 同时实现了 Trojan 协议，Trojan 协议相对于 v2ray 来说更轻量和高效，在大量用户下也几乎不占多少内存，推荐优先选择 Trojan。
