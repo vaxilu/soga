@@ -43,12 +43,8 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 ## v2ray 支持的协议
 |协议              |支持情况           |
 |----------------- |------------------|
-|tcp               |√                 |
-|tcp+tls	       |√                 |
-|ws                |√                 |
-|ws+tls            |√                 |
-|cdn+ws            |√                 |
-|cdn+ws+tls        |√                 |
+|VMess             |tcp,tcp+tls,ws,ws+tls                 |
+|VLESS             |tcp,tcp+tls,ws,ws+tls                 |
 
 ## trojan 支持的协议
 |协议              |支持情况           |
