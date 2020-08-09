@@ -3,13 +3,17 @@
 商业版价格：[进入](https://github.com/sprov065/soga/wiki/05-%E8%8E%B7%E5%8F%96%E5%95%86%E4%B8%9A%E7%89%88%E6%8E%88%E6%9D%83%E7%A0%81)
 
 # soga 后端
-soga 后端是一个支持 v2ray 和 trojan 的后端，社区版版最高支持88用户
+soga 后端是一个支持 v2ray 和 Trojan 的后端，社区版版最高支持88用户
 
 ## v2ray
-soga 后端针对 v2ray 占内存的特点使用 C 语言特别优化了 v2ray 的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 40-60% 的内存空间，用户数量越多，节省的内存就越多，用户较少则节省不明显。
+soga 后端针对 VMess 占内存的特点使用 C 语言特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 40-60% 的内存空间，用户数量越多，节省的内存就越多，用户较少则节省不明显。
 
-## trojan
-soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻量和高效，在大量用户下也几乎不占多少内存，推荐优先选择 trojan。
+soga 后端也支持 VLESS 协议，VLESS 是 v2ray 新推出的协议，比 VMess 协议要轻量得多，完全解决了内存占用大的问题，无需同步时间，与 Trojan 一样轻量、快速，待客户端普及后，推荐从 VMess 转换到此协议上来。
+
+** VLESS 协议还在完善中，目前仅供测试用途**
+
+## Trojan
+soga 同时实现了 Trojan 协议，Trojan 协议相对于 v2ray 来说更轻量和高效，在大量用户下也几乎不占多少内存，推荐优先选择 Trojan。
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |
@@ -46,10 +50,10 @@ soga 同时实现了 trojan 协议，trojan 协议相对于 v2ray 来说更轻�
 |VMess             |tcp,tcp+tls,ws,ws+tls                 |
 |VLESS             |tcp,tcp+tls,ws,ws+tls                 |
 
-## trojan 支持的协议
+## Trojan 支持的协议
 |协议              |支持情况           |
 |----------------- |------------------|
-|trojan协议         |√                 |
+|Trojan协议         |√                 |
 
 
 ## 对接方式
