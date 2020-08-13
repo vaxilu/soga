@@ -90,7 +90,7 @@ install_soga() {
         rm /usr/local/soga/ -rf
     fi
 
-    if  [ ! -n "$1" ] ;then
+    if  [ $# == 0 ] ;then
         last_version=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         echo -e "检测到 soga 最新版本：${last_version}，开始安装"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz
