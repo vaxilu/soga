@@ -92,23 +92,23 @@ install_soga() {
 
     if  [ $# == 0 ] ;then
         last_version=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        if [[ ! -n "$last_version" ]]; then
+            echo -e "${red}检测 soga 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 soga 版本安装${plain}"
+            exit 1
+        fi
         echo -e "检测到 soga 最新版本：${last_version}，开始安装"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz
         if [[ $? -ne 0 ]]; then
-            echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件，如果多次安装失败，请参考手动安装教程${plain}"
+            echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
-        url=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases" | grep -o 'https.*soga-linux64\.tar\.gz' | grep "/$1/")
-        if  [ ! -n "$url" ] ;then
-            echo -e "${red}找不到版本 ${plain} ${green}$1${plain}，请确保此版本存在"
-            exit 1
-        fi
         last_version=$1
+        url="https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz"
         echo -e "开始安装 soga v$1"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
-            echo -e "${red}下载 soga v$1 失败，请确保你的服务器能够下载 Github 的文件，如果多次安装失败，请参考手动安装教程${plain}"
+            echo -e "${red}下载 soga v$1 失败，请确保此版本存在${plain}"
             exit 1
         fi
     fi
