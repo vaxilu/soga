@@ -1,6 +1,6 @@
-详细教程：[进入](https://github.com/sprov065/soga/wiki)
+详细教程：[进入](https://doc.sprov.xyz)
 
-商业版价格：[进入](https://github.com/sprov065/soga/wiki/05-%E8%8E%B7%E5%8F%96%E5%95%86%E4%B8%9A%E7%89%88%E6%8E%88%E6%9D%83%E7%A0%81)
+商业版价格：[进入](https://doc.sprov.xyz/future/get-license-code)
 
 # soga 后端
 soga 后端是一个支持 v2ray 和 Trojan 的后端，社区版版最高支持88用户
