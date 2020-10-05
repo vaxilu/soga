@@ -3,17 +3,22 @@
 商业版价格：[进入](https://doc.sprov.xyz/future/get-license-code)
 
 # soga 后端
-soga 后端是一个支持 v2ray 和 Trojan 的后端，社区版版最高支持88用户
+soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks 的后端，社区版最高支持88用户
 
 ## v2ray
-soga 后端针对 VMess 占内存的特点使用 C 语言特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 40-60% 的内存空间，用户数量越多，节省的内存就越多，用户较少则节省不明显。
+针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 60% 以上的内存空间
 
-soga 后端也支持 VLESS 协议，VLESS 是 v2ray 新推出的协议，比 VMess 协议要轻量得多，完全解决了内存占用大的问题，无需同步时间，与 Trojan 一样轻量、快速，待客户端普及后，推荐从 VMess 转换到此协议上来。
+支持 VLESS 协议，VLESS 是 v2ray 新推出的协议，比 VMess 协议要轻量得多，完全解决了内存占用大的问题，无需同步时间，与 Trojan 一样轻量、快速，待客户端普及后，推荐从 VMess 转换到此协议上来。
+
+支持 v2ray 最新 VMessAEAD 协议，开启后仍可同时兼容原 VMess 协议
 
 **VLESS 协议还在完善中，目前仅供测试用途**
 
 ## Trojan
-soga 同时实现了 Trojan 协议，Trojan 协议相对于 v2ray 来说更轻量和高效，在大量用户下也几乎不占多少内存，推荐优先选择 Trojan。
+soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相对于 VMess 来说非常轻量和高效。
+
+## Shadowsocks
+目前正在积极开发中，预计首先支持 v2board 对接
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |
@@ -55,14 +60,19 @@ soga 同时实现了 Trojan 协议，Trojan 协议相对于 v2ray 来说更轻�
 |----------------- |------------------|
 |Trojan协议         |√                 |
 
+## Shadowsocks 协议
+|协议              |支持情况           |
+|----------------- |------------------|
+|Shadowsocks协议   |开发中                 |
+
 
 ## 对接方式
-|对接方式           |v2ray             |trojan           |
-|------------------|------------------|------------------|
-|webapi     	   |√                 |√                 |
-|数据库   	        |√                 |√                 |
-|docker webapi     |√                 |√                 |
-|docker 数据库     |√                 |√                 |
+|对接方式           |v2ray             |trojan           |shadowsocks           |
+|------------------|------------------|------------------|------------------|
+|webapi     	   |√                 |√                 |开发中                 |
+|数据库   	        |√                 |√                 |开发中                 |
+|docker webapi     |√                 |√                 |开发中                 |
+|docker 数据库     |√                 |√                 |开发中                 |
 
 ## 前端对接方式对照表
 <table>
