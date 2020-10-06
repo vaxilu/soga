@@ -82,7 +82,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <th>docker</th>
     </tr>
     <tr>
-        <th rowspan="2">sspanel-uim</th>
+        <th rowspan="3">sspanel-uim</th>
         <td>v2ray</td>
         <td>√</td>
         <td>√</td>
@@ -95,7 +95,13 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="2">v2board</th>
+        <td>ss</td>
+        <td>开发中</td>
+        <td>开发中</td>
+        <td>开发中</td>
+    </tr>
+    <tr>
+        <th rowspan="3">v2board</th>
         <td>v2ray</td>
         <td>√</td>
         <td>√</td>
@@ -105,6 +111,12 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>trojan</td>
         <td>√</td>
         <td>√</td>
+        <td>√</td>
+    </tr>
+    <tr>
+        <td>ss</td>
+        <td>√</td>
+        <td>不支持</td>
         <td>√</td>
     </tr>
     <tr>
@@ -116,7 +128,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>trojan</td>
     </tr>
     <tr>
-        <th rowspan="2">vnetpanel</th>
+        <th rowspan="3">vnetpanel</th>
         <td>v2ray</td>
         <td>√</td>
         <td rowspan="2" align="center">开发中</td>
@@ -128,15 +140,10 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="2">v2-ui</th>
-        <td>v2ray</td>
-        <td rowspan="2">计划中</td>
-        <td>×</td>
-        <td rowspan="2">计划中</td>
-    </tr>
-    <tr>
-        <td>trojan</td>
-        <td>×</td>
+        <td>ss</td>
+        <td>暂无计划</td>
+        <td>暂无计划</td>
+        <td>暂无计划</td>
     </tr>
 </table>
 
