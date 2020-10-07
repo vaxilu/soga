@@ -120,18 +120,15 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="2">WHCMS</th>
+        <th rowspan="1">WHCMS</th>
         <td>v2ray</td>
-        <td rowspan="2" colspan="3" align="center">开发中</td>
-    </tr>
-    <tr>
-        <td>trojan</td>
+        <td rowspan="1" colspan="3" align="center">开发中</td>
     </tr>
     <tr>
         <th rowspan="3">vnetpanel</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="2" align="center">开发中</td>
+        <td rowspan="2" align="center">暂无计划</td>
         <td>√</td>
     </tr>
     <tr>
