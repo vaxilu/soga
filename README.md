@@ -18,7 +18,7 @@ soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks 的后端，社区
 soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相对于 VMess 来说非常轻量和高效。
 
 ## Shadowsocks
-支持 udp fullcone，支持防重放攻击
+支持单端口多用户、udp fullcone、防重放攻击
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |shadowsocks           |
