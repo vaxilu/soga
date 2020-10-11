@@ -3,7 +3,7 @@
 商业版价格：[进入](https://doc.sprov.xyz/future/get-license-code)
 
 # soga 后端
-soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks 的后端，社区版最高支持88用户
+soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks 的后端，社区版最高支持88用户，优化了长时间运行的内存占用。
 
 ## v2ray
 针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 60% 以上的内存空间
