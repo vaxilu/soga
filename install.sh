@@ -139,6 +139,10 @@ install_soga() {
             echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki${plain}"
         fi
     fi
+
+    if [[ ! -f /etc/soga/blockList ]]; then
+        cp blockList /etc/soga/
+    fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
     chmod +x /usr/bin/soga
     echo -e ""
