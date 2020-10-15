@@ -25,7 +25,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |------------------|------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |开发中                 |
 |v2board	   |√                 |√                 |√                 |
-|WHCMS             |开发中             |不支持            |不支持            |
+|WHCMS             |√             |不支持            |不支持            |
 |vnetpanel         |√                 |√                 |暂无计划                 |
 |proxypanel         |开发中                 |开发中                 |开发中                 |
 
@@ -123,7 +123,9 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
     <tr>
         <th rowspan="1">WHCMS</th>
         <td>v2ray</td>
-        <td rowspan="1" colspan="3" align="center">开发中</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
     <tr>
         <th rowspan="3">vnetpanel</th>
