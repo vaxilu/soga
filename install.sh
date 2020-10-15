@@ -29,9 +29,9 @@ else
     echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
 fi
 
-if [ $(getconf WORD_BIT) != '32' ] && [ $(getconf LONG_BIT) != '64' ] ; then
+if [ "$(getconf WORD_BIT)" != '32' ] && [ "$(getconf LONG_BIT)" != '64' ] ; then
     echo "本软件不支持 32 位系统(x86)，请使用 64 位系统(x86_64)，如果检测有误，请联系作者"
-    exit -1
+    exit 2
 fi
 
 os_version=""
@@ -142,6 +142,9 @@ install_soga() {
 
     if [[ ! -f /etc/soga/blockList ]]; then
         cp blockList /etc/soga/
+    fi
+    if [[ ! -f /etc/soga/dns.yml ]]; then
+        cp dns.yml /etc/soga/
     fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
     chmod +x /usr/bin/soga
