@@ -3,7 +3,7 @@
 商业版价格：[进入](https://doc.sprov.xyz/future/get-license-code)
 
 # soga 后端
-soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks 的后端，社区版最高支持88用户，优化了长时间运行的内存占用。
+soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks、ShadowsocksR 的后端，社区版最高支持88用户，优化了长时间运行的内存占用。
 
 ## v2ray
 针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 60% 以上的内存空间
@@ -20,33 +20,36 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 ## Shadowsocks
 支持单端口多用户、udp fullcone、防重放攻击
 
+## ShadowsocksR（开发中）
+支持单端口多用户、udp fullcone、防重放攻击，
+
 ## 支持的前端
-|前端              |v2ray              |trojan           |shadowsocks           |
-|------------------|------------------|------------------|------------------|
-|sspanel-uim	   |√                 |√                 |开发中                 |
-|v2board	   |√                 |√                 |√                 |
-|WHCMS             |√             |计划中            |计划中            |
-|vnetpanel         |√                 |√                 |暂无计划                 |
-|proxypanel         |√                 |√                 |开发中                 |
+|前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
+|------------------|------------------|------------------|------------------|------------------|
+|sspanel-uim	   |√                 |√                 |开发中                 |开发中                 |
+|v2board	   |√                 |√                 |√                 |不支持                 |
+|WHCMS             |√             |计划中            |计划中            |不支持                 |
+|vnetpanel         |√                 |√                 |暂无计划                 |暂无计划                 |
+|proxypanel         |√                 |√                 |开发中                 |开发中                 |
 
 
 ## 功能介绍
-|功能              |v2ray              |trojan           |shadowsocks           |
-|------------------|------------------|------------------|------------------|
-|单端口多用户	   |√                 |√                 |√                 |
-|用户流量统计	   |√                 |√                 |√                 |
-|限速              |√                 |√                 |√                 |
-|限连接数           |√                 |√                |√                 |
-|服务器信息上报      |√                |√                 |√                 |
-|在线人数上报        |√                |√                 |√                 |
-|在线IP上报         |√                 |√                 |√                 |
-|自动增删用户       |√                 |√                  |√                 |
-|审计规则           |√                 |√                 |√                 |
-|禁止封禁IP连接      |√                |√                 |√                 |
-|自动申请tls证书     |√                 |√                 |√                 |
-|自动续签tls证书     |√                 |√                 |√                 |
-|dns流媒体解锁       |√                 |√                 |√                 |
-|自动同步时间        |√                 |√                 |√                 |
+|功能              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
+|------------------|------------------|------------------|------------------|------------------|
+|单端口多用户	   |√                 |√                 |√                 |√                 |
+|用户流量统计	   |√                 |√                 |√                 |√                 |
+|限速              |√                 |√                 |√                 |√                 |
+|限连接数           |√                 |√                |√                 |√                 |
+|服务器信息上报      |√                |√                 |√                 |√                 |
+|在线人数上报        |√                |√                 |√                 |√                 |
+|在线IP上报         |√                 |√                 |√                 |√                 |
+|自动增删用户       |√                 |√                  |√                 |√                 |
+|审计规则           |√                 |√                 |√                 |√                 |
+|禁止封禁IP连接      |√                |√                 |√                 |√                 |
+|自动申请tls证书     |√                 |√                 |√                 |√                 |
+|自动续签tls证书     |√                 |√                 |√                 |√                 |
+|dns流媒体解锁       |√                 |√                 |√                 |√                 |
+|自动同步时间        |√                 |√                 |√                 |√                 |
 
 ## v2ray 支持的协议
 |协议              |支持情况           |
@@ -59,19 +62,38 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |----------------- |------------------|
 |Trojan协议         |√                 |
 
-## Shadowsocks 协议
-|协议              |支持情况           |
-|----------------- |------------------|
-|Shadowsocks协议   |√                 |
+## Shadowsocks
+|加密              |
+|----------------- |
+|aes-128-gcm   |
+|aes-192-gcm   |
+|aes-256-gcm   |
+|chacha20-ietf-poly1305|
+
+## ShadowsocksR
+|加密              |协议           |混淆           |
+|----------------- |------------------|------------------|
+|aes-128-cfb   |origin                 |plain|
+|aes-192-cfb   |auth_aes128_md5        |http_simple|
+|aes-256-cfb   |auth_aes128_sha1       |    |
+|aes-128-ctr   |auth_chain_a           |    |
+|aes-192-ctr   |                 |    |
+|aes-256-ctr   |                 |    |
+|aes-128-ofb   |                 |    |
+|aes-192-ofb   |                 |    |
+|aes-256-ofb   |                 |    |
+|chacha20      |                 |    |
+|chacha20-ietf |                 |    |
+|salsa20       |                 |    |
 
 
 ## 对接方式
-|对接方式           |v2ray             |trojan           |shadowsocks           |
-|------------------|------------------|------------------|------------------|
-|webapi     	   |√                 |√                 |√                 |
-|数据库   	        |√                 |√                 |√                 |
-|docker webapi     |√                 |√                 |√                 |
-|docker 数据库     |√                 |√                 |√                 |
+|对接方式           |v2ray             |trojan           |shadowsocks           |shadowsocksR           |
+|------------------|------------------|------------------|------------------|------------------|
+|webapi     	   |√                 |√                 |√                 |√                 |
+|数据库   	        |√                 |√                 |√                 |√                 |
+|docker webapi     |√                 |√                 |√                 |√                 |
+|docker 数据库     |√                 |√                 |√                 |√                 |
 
 ## 前端对接方式对照表
 <table>
@@ -83,7 +105,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <th>docker</th>
     </tr>
     <tr>
-        <th rowspan="3">sspanel-uim</th>
+        <th rowspan="4">sspanel-uim</th>
         <td>v2ray</td>
         <td>√</td>
         <td>√</td>
@@ -97,6 +119,12 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
     </tr>
     <tr>
         <td>ss</td>
+        <td>开发中</td>
+        <td>开发中</td>
+        <td>开发中</td>
+    </tr>
+    <tr>
+        <td>ssr</td>
         <td>开发中</td>
         <td>开发中</td>
         <td>开发中</td>
