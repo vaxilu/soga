@@ -21,7 +21,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 支持单端口多用户、udp fullcone、防重放攻击
 
 ## ShadowsocksR（开发中）
-支持单端口多用户、udp fullcone、防重放攻击，
+支持单端口多用户、udp fullcone、防重放攻击
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
