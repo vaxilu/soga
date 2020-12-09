@@ -75,8 +75,8 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |----------------- |------------------|------------------|
 |aes-128-cfb   |origin                 |plain|
 |aes-192-cfb   |auth_aes128_md5        |http_simple|
-|aes-256-cfb   |auth_aes128_sha1       |tls1.2_ticket_auth    |
-|aes-128-ctr   |auth_chain_a           |    |
+|aes-256-cfb   |auth_aes128_sha1       |http_post|
+|aes-128-ctr   |auth_chain_a           |tls1.2_ticket_auth|
 |aes-192-ctr   |                 |    |
 |aes-256-ctr   |                 |    |
 |aes-128-ofb   |                 |    |
