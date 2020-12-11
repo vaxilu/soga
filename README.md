@@ -1,6 +1,6 @@
-详细教程：[进入](https://doc.sprov.xyz)
+详细教程：[进入](https://soga.vaxilu.com)
 
-商业版价格：[进入](https://doc.sprov.xyz/future/get-license-code)
+商业版价格：[进入](https://soga.vaxilu.com/future/get-license-code)
 
 # soga 后端
 soga 后端是一个同时支持 v2ray、Trojan、Shadowsocks、ShadowsocksR 的后端，社区版最高支持88用户，优化了长时间运行的内存占用。
