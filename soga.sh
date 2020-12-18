@@ -119,6 +119,10 @@ update() {
     fi
 }
 
+config() {
+    soga-tool $*
+}
+
 uninstall() {
     confirm "确定要卸载 soga 吗?" "n"
     if [[ $? != 0 ]]; then
@@ -228,7 +232,7 @@ disable() {
 }
 
 show_log() {
-    journalctl -u soga.service -e --no-pager
+    journalctl -u soga.service -e --no-pager -f
     if [[ $# == 0 ]]; then
         before_show_menu
     fi
@@ -437,6 +441,8 @@ if [[ $# > 0 ]]; then
         "log") check_install 0 && show_log 0
         ;;
         "update") check_install 0 && update 0 $2
+        ;;
+        "config") config $*
         ;;
         "install") check_uninstall 0 && install 0
         ;;
