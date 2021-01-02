@@ -26,11 +26,11 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 ## 支持的前端
 |前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
 |------------------|------------------|------------------|------------------|------------------|
-|sspanel-uim	   |√                 |√                 |开发中                 |√                 |
+|sspanel-uim	   |√                 |√                 |√                 |√                 |
 |v2board	   |√                 |√                 |√                 |不支持                 |
 |WHCMS             |√             |计划中            |计划中            |不支持                 |
 |vnetpanel         |√                 |√                 |暂无计划                 |暂无计划                 |
-|proxypanel         |√                 |√                 |开发中                 |开发中                 |
+|proxypanel         |√                 |√                 |√                 |√                 |
 
 
 ## 功能介绍
@@ -64,6 +64,9 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |Trojan协议         |√                 |
 
 ## Shadowsocks
+
+> 对接 V2board 面板支持以下加密
+
 |加密              |
 |----------------- |
 |aes-128-gcm   |
@@ -72,12 +75,16 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |chacha20-ietf-poly1305|
 
 ## ShadowsocksR
+
+> 对接 SSPanel 与 ProxyPanel 支持以下加密、协议、混淆，可兼容 ss
+
 |加密              |协议           |混淆           |
 |----------------- |------------------|------------------|
-|aes-128-cfb   |origin                 |plain|
-|aes-192-cfb   |auth_aes128_md5        |http_simple|
-|aes-256-cfb   |auth_aes128_sha1       |http_post|
-|aes-128-ctr   |auth_chain_a(开发中)           |tls1.2_ticket_auth|
+|none   |origin                 |plain|
+|aes-128-cfb   |auth_aes128_md5                 |http_simple|
+|aes-192-cfb   |auth_aes128_sha1        |http_post|
+|aes-256-cfb   |auth_chain_a(开发中)       |tls1.2_ticket_auth|
+|aes-128-ctr   |           |                          |
 |aes-192-ctr   |                 |    |
 |aes-256-ctr   |                 |    |
 |aes-128-ofb   |                 |    |
@@ -86,6 +93,10 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 |chacha20      |                 |    |
 |chacha20-ietf |                 |    |
 |salsa20       |                 |    |
+|aes-128-gcm   |                 |    |
+|aes-192-gcm   |                 |    |
+|aes-256-gcm   |                 |    |
+|chacha20-ietf-poly1305|                 |    |
 
 
 ## 对接方式
@@ -120,9 +131,9 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
     </tr>
     <tr>
         <td>ss</td>
-        <td>开发中</td>
-        <td>开发中</td>
-        <td>开发中</td>
+        <td>√</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
     <tr>
         <td>ssr</td>
@@ -157,7 +168,7 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="3">vnetpanel</th>
+        <th rowspan="2">vnetpanel</th>
         <td>v2ray</td>
         <td>√</td>
         <td rowspan="2" align="center">暂无计划</td>
@@ -169,16 +180,10 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
         <td>√</td>
     </tr>
     <tr>
-        <td>ss</td>
-        <td>暂无计划</td>
-        <td>暂无计划</td>
-        <td>暂无计划</td>
-    </tr>
-    <tr>
-        <th rowspan="3">proxypanel</th>
+        <th rowspan="4">proxypanel</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="2" align="center">暂无计划</td>
+        <td rowspan="4" align="center">暂无计划</td>
         <td>√</td>
     </tr>
     <tr>
@@ -188,7 +193,13 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
     </tr>
     <tr>
         <td>ss</td>
-        <td colspan="3" align="center">开发中</td>
+        <td>√</td>
+        <td>√</td>
+    </tr>
+    <tr>
+        <td>ssr</td>
+        <td>√</td>
+        <td>√</td>
     </tr>
 </table>
 
