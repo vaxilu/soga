@@ -56,9 +56,9 @@ soga 同时实现了 Trojan 协议，并支持 UDP FullCone，Trojan 协议相�
 ## v2ray 支持的协议
 |协议              |支持情况           |
 |----------------- |------------------|
-|VMess             |tcp,tcp+tls,ws,ws+tls                 |
-|VMessAEAD             |tcp,tcp+tls,ws,ws+tls                 |
-|VLESS             |tcp,tcp+tls,ws,ws+tls                 |
+|VMess             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls                 |
+|VMessAEAD             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls              |
+|VLESS             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls                 |
 
 ## Trojan 支持的协议
 |协议              |支持情况           |
