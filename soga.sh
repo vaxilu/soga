@@ -158,7 +158,7 @@ start() {
         sleep 2
         check_status
         if [[ $? == 0 ]]; then
-            echo -e "${green}soga 启动成功，请使用 soga status 查看启动情况${plain}"
+            echo -e "${green}soga 启动成功，请使用 soga log 查看运行日志${plain}"
         else
             echo -e "${red}soga可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
         fi
