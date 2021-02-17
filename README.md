@@ -6,7 +6,7 @@
 soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、ShadowsocksR 等协议，不基于任何软件，专为面板对接打造，长期运行下内存占用低且非常稳定。
 
 ## v2ray
-针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 `60%` 以上的内存空间
+针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 **60%** 以上的内存空间
 
 支持 VLESS 协议，VLESS 是 v2ray 新推出的协议，比 VMess 协议要轻量得多，完全解决了内存占用大的问题，无需同步时间，与 Trojan 一样轻量、快速。
 
