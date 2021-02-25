@@ -18,10 +18,10 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 支持 UDP FullCone，Trojan 协议相对于 VMess 来说非常轻量和高效。
 
 ## Shadowsocks
-支持单端口多用户、UDP FullCone、防重放攻击
+密码式单端口多用户(v2board)、UDP FullCone、防重放攻击、性能优化。
 
 ## ShadowsocksR
-支持单端口多用户、UDP FullCone、防重放攻击，相对于 py 版的 ssr 后端，使用 Go 语言实现，性能极好，支持多核多线程，内存占用非常低，没有 py 版 ssr 后端的诸多通病。
+混淆式单端口多用户、协议式单端口多用户、多端口多用户、UDP FullCone、防重放攻击，相对于 py 版的 ssr 后端，使用 Go 语言实现，性能极好，支持多核多线程，内存占用非常低，没有 py 版 ssr 后端的诸多通病。
 
 ## 支持的前端
 |前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
