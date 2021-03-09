@@ -24,12 +24,15 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 混淆式单端口多用户、协议式单端口多用户、多端口多用户、UDP FullCone、防重放攻击，相对于 py 版的 ssr 后端，使用 Go 语言实现，性能极好，支持多核多线程，内存占用非常低，没有 py 版 ssr 后端的诸多通病。
 
 ## 支持的前端
+
+> sspanel 只需使用 ssr 授权即可使用混淆和协议单端口，以及多端口，支持 ss AEAD 加密
+
 |前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
 |------------------|------------------|------------------|------------------|------------------|
-|sspanel-uim	   |√                 |√                 |√                 |√                 |
-|v2board	   |√                 |√                 |√                 |不支持                 |
-|WHCMS             |√             |计划中            |计划中            |不支持                 |
-|vnetpanel         |√                 |√                 |暂无计划                 |暂无计划                 |
+|sspanel-uim	   |√                 |√                 |√(混淆单端、多端口)                 |√(协议单端、多端口)                 |
+|v2board	   |√                 |√                 |√(密码单端)                 |×                 |
+|WHCMS             |√             |×            |计划中            |计划中                 |
+|vnetpanel         |√                 |√                 |×                 |×                 |
 |proxypanel         |√                 |√                 |√                 |√                 |
 
 
