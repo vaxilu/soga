@@ -31,7 +31,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 |------------------|------------------|------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |√(混淆单端、多端口)                 |√(协议单端、多端口)                 |
 |v2board	   |√                 |√                 |√(密码单端)                 |×                 |
-|WHCMS             |√             |×            |计划中            |计划中                 |
+|WHCMS             |√             |×            |计划中            |√(协议单端口)                 |
 |vnetpanel         |√                 |√                 |×                 |×                 |
 |proxypanel         |√                 |√                 |√                 |√                 |
 
@@ -166,8 +166,14 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="1">WHCMS</th>
+        <th rowspan="2">WHCMS</th>
         <td>v2ray</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+    </tr>
+    <tr>
+        <td>ssr</td>
         <td>×</td>
         <td>√</td>
         <td>√</td>
