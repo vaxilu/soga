@@ -31,7 +31,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 |------------------|------------------|------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |√(混淆单端、多端口)                 |√(协议单端、多端口)                 |
 |v2board	   |√                 |√                 |√(密码单端)                 |×                 |
-|WHCMS             |√             |×            |计划中            |√(协议单端口)                 |
+|WHCMS             |√(V2raySocks)             |×            |√(V2raySocks)            |√(LegendSock)                 |
 |vnetpanel         |√                 |√                 |×                 |×                 |
 |proxypanel         |√                 |√                 |√                 |√                 |
 
@@ -162,11 +162,11 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
     <tr>
         <td>ss</td>
         <td>√</td>
-        <td>不支持</td>
+        <td>×</td>
         <td>√</td>
     </tr>
     <tr>
-        <th rowspan="2">WHCMS</th>
+        <th rowspan="3">WHCMS</th>
         <td>v2ray</td>
         <td>×</td>
         <td>√</td>
@@ -179,10 +179,16 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
         <td>√</td>
     </tr>
     <tr>
+        <td>ss</td>
+        <td>×</td>
+        <td>√</td>
+        <td>√</td>
+    </tr>
+    <tr>
         <th rowspan="2">vnetpanel</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="2" align="center">暂无计划</td>
+        <td rowspan="2" align="center">×</td>
         <td>√</td>
     </tr>
     <tr>
@@ -194,7 +200,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
         <th rowspan="4">proxypanel</th>
         <td>v2ray</td>
         <td>√</td>
-        <td rowspan="4" align="center">暂无计划</td>
+        <td rowspan="4" align="center">×</td>
         <td>√</td>
     </tr>
     <tr>
