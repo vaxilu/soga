@@ -89,11 +89,11 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 |aes-128-cfb   |auth_aes128_md5                 |http_simple|
 |aes-192-cfb   |auth_aes128_sha1        |http_post|
 |aes-256-cfb   |auth_chain_a       |tls1.2_ticket_auth|
-|aes-128-ctr   |auth_chain_b（开发中）           |simple_obfs_http                          |
-|aes-192-ctr   |auth_chain_c（开发中）                 |simple_obfs_tls（开发中）    |
-|aes-256-ctr   |auth_chain_d（开发中）                 |    |
-|aes-128-ofb   |auth_chain_e（开发中）                 |    |
-|aes-192-ofb   |auth_chain_f（开发中）                 |    |
+|aes-128-ctr   |auth_chain_b           |simple_obfs_http                          |
+|aes-192-ctr   |auth_chain_c                 |simple_obfs_tls    |
+|aes-256-ctr   |auth_chain_d                 |    |
+|aes-128-ofb   |auth_chain_e                 |    |
+|aes-192-ofb   |auth_chain_f                 |    |
 |aes-256-ofb   |                 |    |
 |chacha20      |                 |    |
 |chacha20-ietf |                 |    |
