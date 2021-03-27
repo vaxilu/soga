@@ -61,7 +61,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 |----------------- |------------------|
 |VMess             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls                 |
 |VMessAEAD             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls              |
-|VLESS             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls                 |
+|VLESS             |tcp, tcp+tls, tcp+xtls, ws, ws+tls, h2c, h2+tls                 |
 
 ## Trojan 支持的协议
 |协议              |支持情况           |
