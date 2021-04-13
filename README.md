@@ -30,7 +30,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 |前端              |v2ray              |trojan           |shadowsocks           |shadowsocksR           |
 |------------------|------------------|------------------|------------------|------------------|
 |sspanel-uim	   |√                 |√                 |√(密码单端口)                 |√(混淆+协议单端、多端口)                 |
-|v2board	   |√                 |√                 |√(密码单端)                 |×                 |
+|v2board	   |√                 |√                 |√(密码单端口)                 |×                 |
 |WHCMS             |√(V2raySocks)             |×            |√(V2raySocks)            |√(LegendSock)                 |
 |vnetpanel         |√                 |√                 |×                 |×                 |
 |proxypanel         |√                 |√                 |√                 |√                 |
