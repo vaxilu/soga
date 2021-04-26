@@ -70,7 +70,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 
 ## Shadowsocks
 
-> 对接 V2board 面板支持以下加密
+> 密码单端口支持以下加密
 
 |加密              |
 |----------------- |
@@ -81,7 +81,7 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 
 ## ShadowsocksR
 
-> 对接 SSPanel 与 ProxyPanel 支持以下加密、协议、混淆，可兼容 ss
+> 混淆+协议单端口支持以下加密、协议、混淆
 
 |加密              |协议           |混淆           |
 |----------------- |------------------|------------------|
