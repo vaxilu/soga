@@ -3,7 +3,7 @@
 商业版价格：[进入](https://soga.vaxilu.com/future/get-license-code)
 
 # soga 后端
-soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、ShadowsocksR 等协议，不基于任何软件，专为面板对接打造，长期运行下内存占用低且非常稳定。
+soga 后端使用 Go 语言全新实现 VMess、VLESS、Trojan、Shadowsocks、ShadowsocksR 等协议，不基于任何软件，专为面板对接打造，长期运行下内存占用低且非常稳定。
 
 ## v2ray
 针对 VMess 占内存的特点通过数据结构特别优化了 VMess 协议的内存占用，在相同用户数量和 alterId 下，相对于原版 v2ray 来说可节省 **60%** 以上的内存空间
@@ -12,13 +12,11 @@ soga 后端使用 Go 语言全新实现 v2ray、Trojan、Shadowsocks、Shadowsoc
 
 支持 v2ray 最新 VMessAEAD 协议，开启后仍可同时兼容原 VMess 协议
 
-**VLESS 协议还在完善中，目前仅供测试用途**
-
 ## Trojan
 支持 UDP FullCone，Trojan 协议相对于 VMess 来说非常轻量和高效。
 
 ## Shadowsocks
-密码式单端口多用户(v2board)、UDP FullCone、防重放攻击、针对密码式单端口特点进行性能优化。
+密码式单端口多用户、UDP FullCone、防重放攻击、针对密码式单端口特点进行性能优化。
 
 ## ShadowsocksR
 混淆式单端口多用户、协议式单端口多用户、多端口多用户、UDP FullCone、防重放攻击，相对于 py 版的 ssr 后端，使用 Go 语言实现，性能极好，支持多核多线程，内存占用非常低，没有 py 版 ssr 后端的诸多通病。
