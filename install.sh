@@ -29,6 +29,19 @@ else
     echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
 fi
 
+arch=$(arch)
+
+if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
+  arch="amd64"
+elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
+  arch="arm64"
+else
+  echo "不支持的架构: ${arch}，如检测有误，请联系作者"
+  exit 2
+fi
+
+echo "架构: ${arch}"
+
 if [ "$(getconf WORD_BIT)" != '32' ] && [ "$(getconf LONG_BIT)" != '64' ] ; then
     echo "本软件不支持 32 位系统(x86)，请使用 64 位系统(x86_64)，如果检测有误，请联系作者"
     exit 2
@@ -97,14 +110,14 @@ install_soga() {
             exit 1
         fi
         echo -e "检测到 soga 最新版本：${last_version}，开始安装"
-        wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz
+        wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux64.tar.gz"
+        url="https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz"
         echo -e "开始安装 soga v$1"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -146,9 +159,12 @@ install_soga() {
     if [[ ! -f /etc/soga/dns.yml ]]; then
         cp dns.yml /etc/soga/
     fi
+    if [[ ! -f /etc/soga/routes.toml ]]; then
+        cp routes.toml /etc/soga/
+    fi
     curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
     chmod +x /usr/bin/soga
-    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga-tool
+    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga-tool-${arch}
     chmod +x /usr/bin/soga-tool
     echo -e ""
     echo "soga 管理脚本使用方法: "
