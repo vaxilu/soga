@@ -36,8 +36,8 @@ if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
   arch="arm64"
 else
-  echo "不支持的架构: ${arch}，如检测有误，请联系作者"
-  exit 2
+  arch="amd64"
+  echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
 fi
 
 echo "架构: ${arch}"
