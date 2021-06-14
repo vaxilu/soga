@@ -95,6 +95,7 @@ check_status() {
 
 install_acme() {
     curl https://get.acme.sh | sh
+    acme.sh --set-default-ca  --server  letsencrypt
 }
 
 install_soga() {
