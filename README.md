@@ -87,14 +87,15 @@ soga 后端使用 Go 语言全新实现 VMess、VLESS、Trojan、Shadowsocks、S
 |加密              |协议           |混淆           |
 |----------------- |------------------|------------------|
 |none   |origin                 |plain|
-|rc4-md5       |auth_aes128_md5                 |http_simple|
-|aes-128-cfb   |auth_aes128_sha1        |http_post|
-|aes-192-cfb   |auth_chain_a       |tls1.2_ticket_auth|
-|aes-256-cfb   |auth_chain_b           |simple_obfs_http                          |
-|aes-128-ctr   |auth_chain_c                 |simple_obfs_tls    |
-|aes-192-ctr   |auth_chain_d                 |    |
-|aes-256-ctr   |auth_chain_e                 |    |
-|aes-128-ofb   |auth_chain_f                 |    |
+|rc4           |auth_aes128_md5                 |http_simple|
+|rc4-md5       |auth_aes128_sha1                 |http_post|
+|aes-128-cfb   |auth_chain_a        |tls1.2_ticket_auth|
+|aes-192-cfb   |auth_chain_b       |simple_obfs_http|
+|aes-256-cfb   |auth_chain_c           |simple_obfs_tls                          |
+|aes-128-ctr   |auth_chain_d                 |    |
+|aes-192-ctr   |auth_chain_e                 |    |
+|aes-256-ctr   |auth_chain_f                 |    |
+|aes-128-ofb   |                 |    |
 |aes-192-ofb   |                 |    |
 |aes-256-ofb   |                 |    |
 |chacha20      |                 |    |
