@@ -60,9 +60,9 @@ soga 后端使用 Go 语言全新实现 VMess、VLESS、Trojan、Shadowsocks、S
 ## v2ray 支持的协议
 |协议              |支持情况           |
 |----------------- |------------------|
-|VMess             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls                 |
-|VMessAEAD             |tcp, tcp+tls, ws, ws+tls, h2c, h2+tls              |
-|VLESS             |tcp, tcp+tls, tcp+xtls, ws, ws+tls, h2c, h2+tls                 |
+|VMess             |`tcp`,`tcp+tls`,`ws`,`ws+tls`,`h2c`,`h2+tls`,`grpc`,`grpc+tls`                |
+|VMessAEAD             |`tcp`,`tcp+tls`,`ws`,`ws+tls`,`h2c`,`h2+tls`,`grpc`,`grpc+tls`              |
+|VLESS             |`tcp`,`tcp+tls`,`ws`,`ws+tls`,`h2c`,`h2+tls`,`grpc`,`grpc+tls`                 |
 
 ## Trojan 支持的协议
 |协议              |支持情况           |
