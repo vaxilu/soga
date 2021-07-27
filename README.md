@@ -1,7 +1,3 @@
-详细教程：[进入](https://soga.vaxilu.com)
-
-商业版价格：[进入](https://soga.vaxilu.com/future/get-license-code)
-
 # soga 后端
 soga 后端使用 Go 语言全新实现 VMess、VLESS、Trojan、Shadowsocks、ShadowsocksR 等协议，不基于任何软件，专为面板对接打造，长期运行下内存占用低且非常稳定。
 
@@ -222,7 +218,3 @@ soga 后端使用 Go 语言全新实现 VMess、VLESS、Trojan、Shadowsocks、S
         <td>√</td>
     </tr>
 </table>
-
-加入我们：[Telegram群组](https://t.me/soga_v2ray)
-
-加入我们：[Telegram通知频道](https://t.me/sogav2ray)
