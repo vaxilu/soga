@@ -105,20 +105,20 @@ install_soga() {
     fi
 
     if  [ $# == 0 ] ;then
-        last_version=$(curl -Ls "https://api.github.com/repos/sprov065/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        last_version=$(curl -Ls "https://api.github.com/repos/vaxilu/soga/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
             echo -e "${red}检测 soga 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 soga 版本安装${plain}"
             exit 1
         fi
         echo -e "检测到 soga 最新版本：${last_version}，开始安装"
-        wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz
+        wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/vaxilu/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/sprov065/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz"
+        url="https://github.com/vaxilu/soga/releases/download/${last_version}/soga-linux-${arch}.tar.gz"
         echo -e "开始安装 soga v$1"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -150,7 +150,7 @@ install_soga() {
         if [[ $? == 0 ]]; then
             echo -e "${green}soga 重启成功${plain}"
         else
-            echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息，若无法启动，则可能更改了配置格式，请前往 wiki 查看：https://github.com/sprov065/soga/wiki${plain}"
+            echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息"
         fi
     fi
 
@@ -163,9 +163,9 @@ install_soga() {
     if [[ ! -f /etc/soga/routes.toml ]]; then
         cp routes.toml /etc/soga/
     fi
-    curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga.sh
+    curl -o /usr/bin/soga -Ls https://raw.githubusercontent.com/vaxilu/soga/master/soga.sh
     chmod +x /usr/bin/soga
-    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/sprov065/soga/master/soga-tool-${arch}
+    curl -o /usr/bin/soga-tool -Ls https://raw.githubusercontent.com/vaxilu/soga/master/soga-tool-${arch}
     chmod +x /usr/bin/soga-tool
     echo -e ""
     echo "soga 管理脚本使用方法: "
