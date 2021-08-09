@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/sprov065/soga/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/soga/master/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -108,7 +108,7 @@ update() {
 #        fi
 #        return 0
 #    fi
-    bash <(curl -Ls https://raw.githubusercontent.com/sprov065/soga/master/install.sh) $version
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/soga/master/install.sh) $version
     if [[ $? == 0 ]]; then
         echo -e "${green}更新完成，已自动重启 soga，请使用 soga log 查看运行日志${plain}"
         exit
@@ -239,7 +239,7 @@ show_log() {
 }
 
 install_bbr() {
-    bash <(curl -L -s https://github.com/sprov065/blog/raw/master/bbr.sh)
+    bash <(curl -L -s https://github.com/vaxilu/blog/raw/master/bbr.sh)
     if [[ $? == 0 ]]; then
         echo ""
         echo -e "${green}安装 bbr 成功，请重启服务器${plain}"
@@ -252,7 +252,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/soga -N --no-check-certificate https://github.com/sprov065/soga/raw/master/soga.sh
+    wget -O /usr/bin/soga -N --no-check-certificate https://github.com/vaxilu/soga/raw/master/soga.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
@@ -371,7 +371,7 @@ show_usage() {
 show_menu() {
     echo -e "
   ${green}soga 后端管理脚本，${plain}${red}不适用于docker${plain}
---- https://github.com/sprov065/soga ---
+
   ${green}0.${plain} 退出脚本
 ————————————————
   ${green}1.${plain} 安装 soga
