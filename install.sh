@@ -133,7 +133,9 @@ install_soga() {
     chmod +x soga
     mkdir /etc/soga/ -p
     rm /etc/systemd/system/soga.service -f
+    rm /etc/systemd/system/soga@.service -f
     cp -f soga.service /etc/systemd/system/
+    cp -f soga@.service /etc/systemd/system/
     systemctl daemon-reload
     systemctl stop soga
     systemctl enable soga
