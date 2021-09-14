@@ -1,3 +1,3 @@
 soga
 
-https://soga.yougotme.cc/
+[doc](https://soga.yougotme.cc/)
