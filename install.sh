@@ -74,9 +74,9 @@ fi
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
         yum install epel-release -y
-        yum install wget curl tar crontabs socat -y
+        yum install wget curl tar crontabs socat tzdata -y
     else
-        apt install wget curl tar cron socat -y
+        apt install wget curl tar cron socat tzdata -y
     fi
 }
 
@@ -143,7 +143,7 @@ install_soga() {
     if [[ ! -f /etc/soga/soga.conf ]]; then
         cp soga.conf /etc/soga/
         echo -e ""
-        echo -e "全新安装，请先参看教程：https://soga.vaxilu.com/，配置必要的内容"
+        echo -e "全新安装，请先配置必要的内容"
     else
         systemctl start soga
         sleep 2
@@ -152,7 +152,7 @@ install_soga() {
         if [[ $? == 0 ]]; then
             echo -e "${green}soga 重启成功${plain}"
         else
-            echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息"
+            echo -e "${red}soga 可能启动失败，请稍后使用 soga log 查看日志信息${plain}"
         fi
     fi
 
