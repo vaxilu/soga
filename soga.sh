@@ -154,6 +154,7 @@ start() {
         echo ""
         echo -e "${green}soga已运行，无需再次启动，如需重启请选择重启${plain}"
     else
+        systemctl reset-failed soga
         systemctl start soga
         sleep 2
         check_status
@@ -185,6 +186,7 @@ stop() {
 }
 
 restart() {
+    systemctl reset-failed soga
     systemctl restart soga
     sleep 2
     check_status
