@@ -200,13 +200,6 @@ restart() {
     fi
 }
 
-status() {
-    systemctl status soga --no-pager -l
-    if [[ $# == 0 ]]; then
-        before_show_menu
-    fi
-}
-
 enable() {
     systemctl enable soga
     if [[ $? == 0 ]]; then
@@ -343,7 +336,6 @@ show_usage() {
     echo "soga start              - 启动 soga"
     echo "soga stop               - 停止 soga"
     echo "soga restart            - 重启 soga"
-    echo "soga status             - 查看 soga 状态"
     echo "soga enable             - 设置 soga 开机自启"
     echo "soga disable            - 取消 soga 开机自启"
     echo "soga log                - 查看 soga 日志"
@@ -370,16 +362,15 @@ show_menu() {
   ${green}4.${plain} 启动 soga
   ${green}5.${plain} 停止 soga
   ${green}6.${plain} 重启 soga
-  ${green}7.${plain} 查看 soga 状态
-  ${green}8.${plain} 查看 soga 日志
+  ${green}7.${plain} 查看 soga 日志
 ————————————————
-  ${green}9.${plain} 设置 soga 开机自启
- ${green}10.${plain} 取消 soga 开机自启
+  ${green}8.${plain} 设置 soga 开机自启
+  ${green}9.${plain} 取消 soga 开机自启
 ————————————————
- ${green}11.${plain} 查看 soga 版本
+ ${green}10.${plain} 查看 soga 版本
  "
     show_status
-    echo && read -p "请输入选择 [0-11]: " num
+    echo && read -p "请输入选择 [0-10]: " num
 
     case "${num}" in
         0) exit 0
@@ -396,17 +387,15 @@ show_menu() {
         ;;
         6) check_install && restart
         ;;
-        7) check_install && status
+        7) check_install && show_log
         ;;
-        8) check_install && show_log
+        8) check_install && enable
         ;;
-        9) check_install && enable
+        9) check_install && disable
         ;;
-        10) check_install && disable
+        10) check_install && show_soga_version
         ;;
-        11) check_install && show_soga_version
-        ;;
-        *) echo -e "${red}请输入正确的数字 [0-11]${plain}"
+        *) echo -e "${red}请输入正确的数字 [0-10]${plain}"
         ;;
     esac
 }
@@ -419,8 +408,6 @@ if [[ $# > 0 ]]; then
         "stop") check_install 0 && stop 0
         ;;
         "restart") check_install 0 && restart 0
-        ;;
-        "status") check_install 0 && status 0
         ;;
         "enable") check_install 0 && enable 0
         ;;
