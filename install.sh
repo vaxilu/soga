@@ -47,29 +47,43 @@ if [ "$(getconf WORD_BIT)" != '32' ] && [ "$(getconf LONG_BIT)" != '64' ] ; then
     exit 2
 fi
 
-os_version=""
+#os_version=""
+#
+## os version
+#if [[ -f /etc/os-release ]]; then
+#    os_version=$(awk -F'[= ."]' '/VERSION_ID/{print $3}' /etc/os-release)
+#fi
+#if [[ -z "$os_version" && -f /etc/lsb-release ]]; then
+#    os_version=$(awk -F'[= ."]+' '/DISTRIB_RELEASE/{print $2}' /etc/lsb-release)
+#fi
+#
+#if [[ x"${release}" == x"centos" ]]; then
+#    if [[ ${os_version} -le 6 ]]; then
+#        echo -e "${red}请使用 CentOS 7 或更高版本的系统！${plain}\n" && exit 1
+#    fi
+#elif [[ x"${release}" == x"ubuntu" ]]; then
+#    if [[ ${os_version} -lt 16 ]]; then
+#        echo -e "${red}请使用 Ubuntu 16 或更高版本的系统！${plain}\n" && exit 1
+#    fi
+#elif [[ x"${release}" == x"debian" ]]; then
+#    if [[ ${os_version} -lt 8 ]]; then
+#        echo -e "${red}请使用 Debian 8 或更高版本的系统！${plain}\n" && exit 1
+#    fi
+#fi
 
-# os version
-if [[ -f /etc/os-release ]]; then
-    os_version=$(awk -F'[= ."]' '/VERSION_ID/{print $3}' /etc/os-release)
-fi
-if [[ -z "$os_version" && -f /etc/lsb-release ]]; then
-    os_version=$(awk -F'[= ."]+' '/DISTRIB_RELEASE/{print $2}' /etc/lsb-release)
-fi
+function is_cmd_exist() {
+    local cmd="$1"
+    if [ -z "$cmd" ]; then
+        return 1
+    fi
 
-if [[ x"${release}" == x"centos" ]]; then
-    if [[ ${os_version} -le 6 ]]; then
-        echo -e "${red}请使用 CentOS 7 或更高版本的系统！${plain}\n" && exit 1
+    which "$cmd" > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        return 0
     fi
-elif [[ x"${release}" == x"ubuntu" ]]; then
-    if [[ ${os_version} -lt 16 ]]; then
-        echo -e "${red}请使用 Ubuntu 16 或更高版本的系统！${plain}\n" && exit 1
-    fi
-elif [[ x"${release}" == x"debian" ]]; then
-    if [[ ${os_version} -lt 8 ]]; then
-        echo -e "${red}请使用 Debian 8 或更高版本的系统！${plain}\n" && exit 1
-    fi
-fi
+
+	  return 2
+}
 
 install_base() {
     if [[ x"${release}" == x"centos" ]]; then
@@ -189,6 +203,12 @@ install_soga() {
     echo "soga version            - 查看 soga 版本"
     echo "------------------------------------------"
 }
+
+is_cmd_exist "systemctl"
+if [[ $? != 0 ]]; then
+    echo "systemctl 命令不存在，请使用较新版本的系统，例如 Ubuntu 18+、Debian 9+"
+    exit 1
+fi
 
 echo -e "${green}开始安装${plain}"
 install_base
