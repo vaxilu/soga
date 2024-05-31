@@ -124,7 +124,7 @@ install_soga() {
 #            echo -e "${red}检测 soga 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 soga 版本安装${plain}"
 #            exit 1
 #        fi
-        echo -e "检测到 soga 最新版本：${last_version}，开始安装"
+        echo -e "开始安装 soga 最新版"
         wget -N --no-check-certificate -O /usr/local/soga.tar.gz https://github.com/vaxilu/soga/releases/latest/download/soga-linux-${arch}.tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 soga 失败，请确保你的服务器能够下载 Github 的文件${plain}"
