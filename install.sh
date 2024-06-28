@@ -145,6 +145,7 @@ install_soga() {
     rm soga.tar.gz -f
     cd soga
     chmod +x soga
+    last_version="$(./soga -v)"
     mkdir /etc/soga/ -p
     rm /etc/systemd/system/soga.service -f
     rm /etc/systemd/system/soga@.service -f
