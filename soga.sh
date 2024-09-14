@@ -227,7 +227,11 @@ disable() {
 }
 
 show_log() {
-    journalctl -u soga.service -e --no-pager -f
+    n="$2"
+    if [[ $2 == "" ]]; then
+        n="1000"
+    fi
+    journalctl -u soga.service -e --no-pager -f -n "${n}"
     if [[ $# == 0 ]]; then
         before_show_menu
     fi
@@ -413,7 +417,7 @@ if [[ $# > 0 ]]; then
         ;;
         "disable") check_install 0 && disable 0
         ;;
-        "log") check_install 0 && show_log 0
+        "log") check_install 0 && show_log 0 $2
         ;;
         "update") check_install 0 && update 0 $2
         ;;
