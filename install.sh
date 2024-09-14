@@ -174,6 +174,9 @@ install_soga() {
     if [[ ! -f /etc/soga/blockList ]]; then
         cp blockList /etc/soga/
     fi
+    if [[ ! -f /etc/soga/whiteList ]]; then
+        cp whiteList /etc/soga/
+    fi
     if [[ ! -f /etc/soga/dns.yml ]]; then
         cp dns.yml /etc/soga/
     fi
