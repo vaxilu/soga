@@ -195,6 +195,7 @@ install_soga() {
     echo "soga enable             - 设置 soga 开机自启"
     echo "soga disable            - 取消 soga 开机自启"
     echo "soga log                - 查看 soga 日志"
+    echo "soga log n              - 查看 soga 最后 n 行日志"
     echo "soga update             - 更新 soga"
     echo "soga update x.x.x       - 更新 soga 指定版本"
     echo "soga config             - 显示配置文件内容"
